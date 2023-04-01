@@ -62,7 +62,18 @@ body {
       }
     }
   }
+  button {
+    width: 90%;
+    height: 8vh;
+    margin: 30px 0px;
+    background-color: #e4e5d5;
+    border: none;
+    color: black;
+    font-size: 2.5rem;
+    border-radius: 8px;
+  }
 }
+
 .TitleFont {
   font-size: 1.5rem;
   color: #87888a;
@@ -75,6 +86,7 @@ body {
 .MoneyFont {
   font-size: 2.5rem;
   color: black;
+  outline: none;
   border: 1px solid #c3c3b9;
   border-radius: 8px;
 }
@@ -87,6 +99,7 @@ body {
   color: #c3c3b9;
 }
 .reduceAmountBoder {
+  outline: none;
   border: 1px solid #e5e5db;
   border-radius: 5px;
 }
