@@ -1,0 +1,98 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #c3c3b9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
+    width: 60%;
+    height: 15vh;
+    background-color: #f9faf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 1.7rem;
+      display: flex;
+    }
+  }
+  main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9faf7;
+
+    div {
+      width: 90%;
+      margin-bottom: 10px;
+      div.TitleBox {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        // background-color: green;
+      }
+      input {
+        width: 100%;
+      }
+      div.TaxBox {
+        width: 100%;
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          width: 100%;
+          display: flex;
+        }
+      }
+    }
+    div.ProveBox {
+      //   background-color: red;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      input {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+.TitleFont {
+  font-size: 1.5rem;
+  color: #87888a;
+  margin-right: 10px;
+}
+.TitleLittleFont {
+  font-size: 0.5rem;
+  color: #c3c3b9;
+}
+.MoneyFont {
+  font-size: 2.5rem;
+  color: black;
+  border: 1px solid #c3c3b9;
+  border-radius: 8px;
+}
+.reduceTitle {
+  font-size: 1rem;
+  color: #c3c3b9;
+}
+.reduceAmount {
+  font-size: 1.2rem;
+  color: #c3c3b9;
+}
+.reduceAmountBoder {
+  border: 1px solid #e5e5db;
+  border-radius: 5px;
+}
+.MoneyView {
+  text-align: right;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

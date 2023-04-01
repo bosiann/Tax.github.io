@@ -1,0 +1,98 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #c3c3b9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body header {
+  width: 60%;
+  height: 15vh;
+  background-color: #f9faf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header p {
+  font-size: 1.7rem;
+  display: flex;
+}
+body main {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9faf7;
+}
+body main div {
+  width: 90%;
+  margin-bottom: 10px;
+}
+body main div div.TitleBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+body main div input {
+  width: 100%;
+}
+body main div div.TaxBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body main div div.TaxBox div {
+  width: 100%;
+  display: flex;
+}
+body main div.ProveBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main div.ProveBox input {
+  width: 15px;
+  height: 15px;
+}
+
+.TitleFont {
+  font-size: 1.5rem;
+  color: #87888a;
+  margin-right: 10px;
+}
+
+.TitleLittleFont {
+  font-size: 0.5rem;
+  color: #c3c3b9;
+}
+
+.MoneyFont {
+  font-size: 2.5rem;
+  color: black;
+  border: 1px solid #c3c3b9;
+  border-radius: 8px;
+}
+
+.reduceTitle {
+  font-size: 1rem;
+  color: #c3c3b9;
+}
+
+.reduceAmount {
+  font-size: 1.2rem;
+  color: #c3c3b9;
+}
+
+.reduceAmountBoder {
+  border: 1px solid #e5e5db;
+  border-radius: 5px;
+}
+
+.MoneyView {
+  text-align: right;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}/*# sourceMappingURL=style.css.map */

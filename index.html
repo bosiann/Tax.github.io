@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="Zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>簡易計算稅</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body>
+    <!-- Header titile -->
+    <header>
+      <p>勞報報價簡易計算</p>
+    </header>
+    <main>
+      <!-- 所得金額 稅前費用 -->
+      <div>
+        <div class="TitleBox">
+          <label for="amount" class="TitleFont">所得金額</label>
+          <span class="TitleLittleFont">報價或預算金額</span>
+        </div>
+        <input type="text" id="amount" class="MoneyFont" value="0" />
+      </div>
+      <!-- 實拿金額 稅後費用 -->
+      <div>
+        <div class="TitleBox">
+          <label for="netIncome" class="TitleFont">實得金額</label>
+          <span class="TitleLittleFont">稅後可實拿金額</span>
+        </div>
+        <input type="text" id="netIncome" class="MoneyFont" value="0" />
+      </div>
+      <!-- 代扣項目 -->
+      <div>
+        <!-- 代扣個人所得稅 -->
+        <div class="TaxBox">
+          <label for="personalTax" class="reduceTitle">-代扣所得稅</label>
+          <div>
+            <!-- %數金額 和 實質數值位置 -->
+            <div>
+              <input
+                type="text"
+                id="personalTax"
+                class="reduceAmount reduceAmountBoder"
+                value="10"
+              />
+              <span class="reduceAmount">%</span>
+            </div>
+            <input
+              type="text"
+              id="personalTaxValue"
+              class="reduceAmount MoneyView"
+              value="0"
+            />
+          </div>
+        </div>
+        <!-- 二代健保補充費 -->
+        <div class="TaxBox">
+          <label for="healthTax" class="reduceTitle">-補充健保費</label>
+          <div>
+            <!-- %數金額 和 實質數值位置 -->
+            <div>
+              <input
+                type="text"
+                id="healthTax"
+                class="reduceAmount reduceAmountBoder"
+                value="2.11"
+              />
+              <span class="reduceAmount">%</span>
+            </div>
+            <input
+              type="text"
+              id="healthTaxValue"
+              class="reduceAmount MoneyView"
+              value="0"
+            />
+          </div>
+          <!-- 在保證明 -->
+        </div>
+        <div class="ProveBox">
+          <label for="TaxProve" class="reduceTitle">在保證明</label>
+          <input type="radio" name="prove" value="1" />
+          <p class="reduceTitle">有</p>
+          <input type="radio" name="prove" value="0" checked />
+          <p class="reduceTitle">無</p>
+        </div>
+      </div>
+    </main>
+    <button id="conversion">計算</button>
+  </body>
+  <script src="./js/javascript.js"></script>
+</html>
