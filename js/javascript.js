@@ -8,7 +8,7 @@ let healthTax = document.getElementById("healthTax");
 let healthTaxValue = document.getElementById("healthTaxValue");
 let personalTaxValue = document.getElementById("personalTaxValue");
 
-// 扣除額小數點
+// 扣除額小數
 let deduction = 0;
 // 方向選擇 ture=所得 flase = 實得
 let CalculateDirection = 0;
