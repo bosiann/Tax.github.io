@@ -1,13 +1,15 @@
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: #c3c3b9;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 body header {
-  width: 60%;
+  width: 60vw;
   height: 15vh;
   background-color: #f9faf7;
   display: flex;
@@ -15,11 +17,12 @@ body header {
   align-items: center;
 }
 body header p {
-  font-size: 1.7rem;
+  font-size: 2rem;
   display: flex;
+  font-weight: 900;
 }
 body main {
-  width: 60%;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,67 +41,114 @@ body main div div.TitleBox {
 body main div input {
   width: 100%;
 }
-body main div div.TaxBox {
+body main div.DeductPart {
+  display: flex;
+}
+body main div.DeductPart section.left {
+  display: flex;
+  flex: 1 1 200px;
+  justify-content: center;
+  align-items: center;
+}
+body main div.DeductPart section.left img {
+  width: 2.5vw;
+  height: 2.5vw;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: rotate(-90deg);
+}
+body main div.DeductPart section.left .IconRotate {
+  transform: rotate(90deg);
+}
+body main div.DeductPart section.right {
+  flex: 2 1 500px;
+}
+body main div.DeductPart input {
+  width: 50%;
+}
+body main div.DeductPart div.TaxBox {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-body main div div.TaxBox div {
+body main div.DeductPart div.TaxBox div {
   width: 100%;
   display: flex;
 }
-body main div.ProveBox {
+body main div.DeductPart div.ProveBox {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
 }
-body main div.ProveBox input {
+body main div.DeductPart div.ProveBox input {
   width: 15px;
   height: 15px;
 }
 body button {
   width: 90%;
   height: 8vh;
-  margin: 30px 0px;
-  background-color: #e4e5d5;
+  margin: 60px 0px;
+  background-color: #c6f277;
   border: none;
   color: black;
   font-size: 2.5rem;
   border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .TitleFont {
   font-size: 1.5rem;
   color: #87888a;
-  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .TitleLittleFont {
   font-size: 0.5rem;
   color: #c3c3b9;
+  font-weight: 100;
 }
 
 .MoneyFont {
+  box-sizing: border-box;
+  padding: 10px 0px;
+  padding-left: 20px;
   font-size: 2.5rem;
   color: black;
   outline: none;
   border: 1px solid #c3c3b9;
   border-radius: 8px;
+  transition: 0.1s;
+}
+
+.Useing {
+  border: 3px solid #c6f277;
 }
 
 .reduceTitle {
   font-size: 1rem;
   color: #c3c3b9;
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+
+.RroveTitle {
+  font-size: 1rem;
+  color: #c3c3b9;
+  font-weight: 300;
 }
 
 .reduceAmount {
   font-size: 1.2rem;
   color: #c3c3b9;
+  padding: 5px;
+  font-weight: 300;
 }
 
 .reduceAmountBoder {
   outline: none;
-  border: 1px solid #e5e5db;
+  border: none;
   border-radius: 5px;
 }
 

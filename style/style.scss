@@ -1,13 +1,14 @@
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: #c3c3b9;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   header {
-    width: 60%;
+    width: 60vw;
     height: 15vh;
     background-color: #f9faf7;
     display: flex;
@@ -15,12 +16,13 @@ body {
     align-items: center;
 
     p {
-      font-size: 1.7rem;
+      font-size: 2rem;
       display: flex;
+      font-weight: 900;
     }
   }
   main {
-    width: 60%;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +41,34 @@ body {
       input {
         width: 100%;
       }
+    }
+    // 代扣項目
+    div.DeductPart {
+      display: flex;
+      // 左邊Icon
+      section.left {
+        display: flex;
+        flex: 1 1 200px;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 2.5vw;
+          height: 2.5vw;
+          cursor: pointer;
+          transition: 0.3s;
+          transform: rotate(-90deg);
+        }
+        .IconRotate {
+          transform: rotate(90deg);
+        }
+      }
+      // 右邊扣除項目
+      section.right {
+        flex: 2 1 500px;
+      }
+      input {
+        width: 50%;
+      }
       div.TaxBox {
         width: 100%;
         // background-color: red;
@@ -50,59 +80,90 @@ body {
           display: flex;
         }
       }
-    }
-    div.ProveBox {
-      //   background-color: red;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      input {
-        width: 15px;
-        height: 15px;
+      div.ProveBox {
+        //   background-color: red;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        // span.radioIcon {
+        //   width: 15px;
+        //   height: 15px;
+        //   background-color: red;
+        // }
+        input {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
   }
   button {
     width: 90%;
     height: 8vh;
-    margin: 30px 0px;
-    background-color: #e4e5d5;
+    margin: 60px 0px;
+    background-color: #c6f277;
     border: none;
     color: black;
     font-size: 2.5rem;
     border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
   }
 }
 
 .TitleFont {
   font-size: 1.5rem;
   color: #87888a;
-  margin-right: 10px;
+  padding-right: 10px;
 }
 .TitleLittleFont {
   font-size: 0.5rem;
   color: #c3c3b9;
+  font-weight: 100;
 }
+// 金額顯示格式
 .MoneyFont {
+  box-sizing: border-box;
+  padding: 10px 0px;
+  padding-left: 20px;
   font-size: 2.5rem;
   color: black;
   outline: none;
   border: 1px solid #c3c3b9;
   border-radius: 8px;
+  transition: 0.1s;
 }
+.Useing {
+  border: 3px solid #c6f277;
+}
+// 減量 標題文字格式
 .reduceTitle {
   font-size: 1rem;
   color: #c3c3b9;
+  padding-bottom: 10px;
+  font-weight: 300;
 }
+.RroveTitle {
+  font-size: 1rem;
+  color: #c3c3b9;
+  font-weight: 300;
+}
+
+// 減量 數值格式
 .reduceAmount {
   font-size: 1.2rem;
   color: #c3c3b9;
+  padding: 5px;
+  font-weight: 300;
 }
+// 扣除額 格式
 .reduceAmountBoder {
   outline: none;
-  border: 1px solid #e5e5db;
+  border: none;
   border-radius: 5px;
 }
+// 顯示數值
 .MoneyView {
   text-align: right;
   outline: none;
