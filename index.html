@@ -27,18 +27,18 @@
           <label for="amount" class="TitleFont">所得金額</label>
           <span class="TitleLittleFont">報價或預算金額</span>
         </div>
-        <input type="text" id="amount" class="MoneyFont Useing" value="0" />
+        <input
+          type="number"
+          id="amount"
+          class="MoneyFont Useing"
+          value="50000"
+        />
       </div>
       <!-- 代扣項目 -->
       <div class="DeductPart">
         <!-- 箭頭方向 -->
         <section class="left">
-          <img
-            src="./img/arrow-right.svg"
-            alt="arrow"
-            id="DirectionIcon"
-            class=""
-          />
+          <img src="./img/arrow-right.svg" alt="arrow" id="DirectionIcon" />
         </section>
         <section class="right">
           <!-- 代扣個人所得稅 -->
@@ -48,19 +48,14 @@
               <!-- %數金額 和 實質數值位置 -->
               <div>
                 <input
-                  type="text"
+                  type="number"
                   id="personalTax"
                   class="reduceAmount reduceAmountBoder"
                   value="10"
                 />
                 <span class="reduceAmount">%</span>
               </div>
-              <input
-                type="text"
-                id="personalTaxValue"
-                class="reduceAmount MoneyView"
-                value="0"
-              />
+              <p id="personalTaxValue" class="reduceAmount MoneyView">0</p>
             </div>
           </div>
           <!-- 二代健保補充費 -->
@@ -70,31 +65,25 @@
               <!-- %數金額 和 實質數值位置 -->
               <div>
                 <input
-                  type="text"
+                  type="number"
                   id="healthTax"
                   class="reduceAmount reduceAmountBoder"
                   value="2.11"
                 />
                 <span class="reduceAmount">%</span>
               </div>
-              <input
-                type="text"
-                id="healthTaxValue"
-                class="reduceAmount MoneyView"
-                value="0"
-              />
+              <p id="healthTaxValue" class="reduceAmount MoneyView">0</p>
             </div>
             <!-- 在保證明 -->
           </div>
           <div class="ProveBox">
-            <!-- <label for="TaxProve" class="RroveTitle">在保證明：</label> -->
-            <!-- 尚未製作 custon radioIcon -->
+            <label for="TaxProve" class="RroveTitle">在保證明：</label>
             <!-- <span class="radioIcon"></span> -->
-            <!-- <input type="radio" name="prove" value="1" class="test" />
-            <p class="RroveTitle">有</p> -->
+            <input type="radio" name="prove" value="1" />
+            <p class="RroveTitle">有</p>
             <!-- <span class="radioIcon"></span> -->
-            <!-- <input type="radio" name="prove" value="0" class="test" checked />
-            <p class="RroveTitle">無</p> -->
+            <input type="radio" name="prove" value="0" checked />
+            <p class="RroveTitle">無</p>
           </div>
         </section>
       </div>
@@ -102,9 +91,9 @@
       <div>
         <div class="TitleBox">
           <label for="netIncome" class="TitleFont">實得金額</label>
-          <span class="TitleLittleFont">稅後可實拿金額</span>
+          <span class="TitleLittleFont">扣完可實拿金額</span>
         </div>
-        <input type="text" id="netIncome" class="MoneyFont" value="0" />
+        <input type="number" id="netIncome" class="MoneyFont" value="0" />
       </div>
       <button id="conversion">計算</button>
     </main>

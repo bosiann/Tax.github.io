@@ -1,8 +1,11 @@
-let convertBtn = document.getElementById("conversion");
+const convertBtn = document.getElementById("conversion");
+
 // 所得金額欄位
 let quotation = document.getElementById("amount");
+
 // 實得金額欄位
 let netIncome = document.getElementById("netIncome");
+
 let personalTax = document.getElementById("personalTax");
 let healthTax = document.getElementById("healthTax");
 let healthTaxValue = document.getElementById("healthTaxValue");
@@ -10,35 +13,25 @@ let personalTaxValue = document.getElementById("personalTaxValue");
 
 // 扣除額小數
 let deduction = 0;
-// 方向選擇 ture=所得 flase = 實得
-let CalculateDirection = 0;
-// 方向Icon
-let DirectionBtn = document.getElementById("DirectionIcon");
 
-// 按下計算方向按鈕
+// 計算方向Icon
+const DirectionBtn = document.getElementById("DirectionIcon");
+//.Useing 輸入值外框
+//IconRotate 旋轉Icon
+// 計算方向按鈕
 DirectionBtn.addEventListener("click", () => {
-  // 偶數往下 基數往上
-  if (CalculateDirection % 2 == 0) {
-    DirectionBtn.classList.add("IconRotate");
-    quotation.classList.remove("Useing");
-    netIncome.classList.add("Useing");
-  } else {
-    DirectionBtn.classList.remove("IconRotate");
-    quotation.classList.add("Useing");
-    netIncome.classList.remove("Useing");
-  }
-  CalculateDirection++;
+  DirectionBtn.classList.toggle("IconRotate");
+  quotation.classList.toggle("Useing");
+  netIncome.classList.toggle("Useing");
 });
 
-// 按下計算
+// 按下計算按鈕
 convertBtn.addEventListener("click", () => {
   // 計算扣除%數多少
-  deduction =
-    1 -
-    (percentageToDecimal(personalTax.value) +
-      percentageToDecimal(healthTax.value));
+  deduction = 1 - (ToDecimal(personalTax.value) + ToDecimal(healthTax.value));
+  const CalculateIsTop = quotation.classList.contains("Useing");
   // 判斷用哪一種方法計算
-  if (CalculateDirection % 2 == 0) {
+  if (CalculateIsTop) {
     TaxToIncome();
   } else {
     IncomeToTax();
@@ -50,17 +43,19 @@ function TaxToIncome() {
   //判斷是否超過2萬要扣稅
   if (quotation.value > 20000) {
     netIncome.value = PayTaxes(quotation.value);
+    personalTaxValue.innerHTML =
+      Math.round(quotation.value * ToDecimal(personalTax.value)) * -1;
+    healthTaxValue.innerHTML =
+      Math.round(quotation.value * ToDecimal(healthTax.value)) * -1;
   } else {
     netIncome.value = quotation.value;
+    personalTaxValue.innerHTML = 0;
+    healthTaxValue.innerHTML = 0;
   }
 }
 
 // 超過兩萬扣稅
 function PayTaxes(money) {
-  personalTaxValue.value =
-    Math.round(quotation.value * percentageToDecimal(personalTax.value)) * -1;
-  healthTaxValue.value =
-    Math.round(quotation.value * percentageToDecimal(healthTax.value)) * -1;
   AfterTax = money * deduction;
   return Math.round(AfterTax);
 }
@@ -69,13 +64,34 @@ function PayTaxes(money) {
 function IncomeToTax() {
   AfterTax = netIncome.value / deduction;
   quotation.value = Math.round(AfterTax);
-  personalTaxValue.value =
-    Math.round(quotation.value * percentageToDecimal(personalTax.value)) * -1;
-  healthTaxValue.value =
-    Math.round(quotation.value * percentageToDecimal(healthTax.value)) * -1;
+  personalTaxValue.innerHTML =
+    Math.round(quotation.value * ToDecimal(personalTax.value)) * -1;
+  healthTaxValue.innerHTML =
+    Math.round(quotation.value * ToDecimal(healthTax.value)) * -1;
 }
 
+//判斷是否有在保證明
+const ProveRadio = document.querySelectorAll('input[name="prove"]');
+let ProveCheck = false;
+ProveRadio.forEach((item) => {
+  this.addEventListener("click", () => {
+    if (item.checked) {
+      if (item.value == 0) {
+        ProveCheck = false;
+        healthTax.value = 2.11;
+      } else {
+        ProveCheck = true;
+        healthTax.value = 0;
+      }
+    }
+  });
+});
+
 //換算百分比
-function percentageToDecimal(percentage) {
+function ToDecimal(percentage) {
   return percentage / 100;
 }
+// //千位數格式
+// function numberWithCommas(x) {
+//   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
