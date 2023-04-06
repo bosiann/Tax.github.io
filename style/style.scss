@@ -14,11 +14,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-family: "Noto Sans TC", sans-serif;
     p {
       font-size: 3rem;
       display: flex;
-      font-weight: 900;
+
+      font-weight: 600;
     }
   }
   main {
@@ -57,6 +58,12 @@ body {
           cursor: pointer;
           transition: 0.3s;
           transform: rotate(-90deg);
+        }
+        img:hover {
+          scale: 1.05;
+        }
+        img:active {
+          scale: 0.95;
         }
         .IconRotate {
           transform: rotate(90deg);
@@ -109,6 +116,14 @@ body {
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
+    font-weight: 500;
+    transition: 0.05s;
+  }
+  button:hover {
+    scale: 1.01;
+  }
+  button:active {
+    scale: 0.98;
   }
 }
 
@@ -211,4 +226,10 @@ body {
   .reduceAmount {
     font-size: 0.8rem;
   }
+}
+// 去除input number旁邊上下鍵
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

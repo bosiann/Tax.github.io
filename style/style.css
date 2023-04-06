@@ -15,11 +15,12 @@ body header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
 }
 body header p {
   font-size: 3rem;
   display: flex;
-  font-weight: 900;
+  font-weight: 600;
 }
 body main {
   width: 60vw;
@@ -56,6 +57,12 @@ body main div.DeductPart section.left img {
   cursor: pointer;
   transition: 0.3s;
   transform: rotate(-90deg);
+}
+body main div.DeductPart section.left img:hover {
+  scale: 1.05;
+}
+body main div.DeductPart section.left img:active {
+  scale: 0.95;
 }
 body main div.DeductPart section.left .IconRotate {
   transform: rotate(90deg);
@@ -96,6 +103,14 @@ body button {
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
+  font-weight: 500;
+  transition: 0.05s;
+}
+body button:hover {
+  scale: 1.01;
+}
+body button:active {
+  scale: 0.98;
 }
 
 .TitleFont {
@@ -196,4 +211,9 @@ body button {
   .reduceAmount {
     font-size: 0.8rem;
   }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

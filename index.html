@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>簡易計算稅</title>
+    <title>幫你算</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
   <body>
     <!-- Header titile -->
     <header>
-      <p>勞報報價簡易計算</p>
+      <p>勞報幫你算</p>
     </header>
     <main>
       <!-- 所得金額 稅前費用 -->
@@ -27,7 +27,13 @@
           <label for="amount" class="TitleFont">所得金額</label>
           <span class="TitleLittleFont">報價或預算金額</span>
         </div>
-        <input type="number" id="amount" class="MoneyFont Useing" value="0" />
+        <input
+          type="number"
+          id="amount"
+          class="MoneyFont Useing"
+          inputmode="numeric"
+          pattern="[0-9]*"
+        />
       </div>
       <!-- 代扣項目 -->
       <div class="DeductPart">
@@ -46,6 +52,8 @@
                   type="number"
                   id="personalTax"
                   class="reduceAmount reduceAmountBoder"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
                   value="10"
                 />
                 <span class="reduceAmount">%</span>
@@ -63,6 +71,8 @@
                   type="number"
                   id="healthTax"
                   class="reduceAmount reduceAmountBoder"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
                   value="2.11"
                 />
                 <span class="reduceAmount">%</span>
@@ -88,7 +98,13 @@
           <label for="netIncome" class="TitleFont">實得金額</label>
           <span class="TitleLittleFont">扣完可實拿金額</span>
         </div>
-        <input type="number" id="netIncome" class="MoneyFont" value="0" />
+        <input
+          type="number"
+          id="netIncome"
+          class="MoneyFont"
+          inputmode="numeric"
+          pattern="[0-9]*"
+        />
       </div>
       <button id="conversion">計算</button>
     </main>
