@@ -14,6 +14,22 @@ let personalTaxValue = document.getElementById("personalTaxValue");
 // 扣除額小數
 let deduction = 0;
 
+// 輸入金額_限制只能輸入正整數 + 千分位數
+const InputAmount = document.querySelectorAll(".OnlyNumberAndComma");
+InputAmount.forEach((item) => {
+  item.addEventListener("input", () => {
+    // 千分位轉換
+    const numberWithCommas = NumberWithCommas(RealNumber(item.value));
+    item.value = numberWithCommas;
+  });
+});
+
+//限制只能是正整數
+const OnlyNumber = document.querySelector(".OnlyNumber");
+OnlyNumber.addEventListener("input", () => {
+  OnlyNumber.value = RealNumber(OnlyNumber.value);
+});
+
 // 計算方向Icon
 const DirectionBtn = document.getElementById("DirectionIcon");
 //.Useing 輸入值外框
@@ -28,7 +44,16 @@ DirectionBtn.addEventListener("click", () => {
 });
 
 // 按下計算按鈕
-convertBtn.addEventListener("click", () => {
+convertBtn.addEventListener("click", FindYourMoney);
+// Enter
+document.addEventListener("keyup", (event) => {
+  if (event.key == "Enter") {
+    FindYourMoney();
+  }
+});
+
+// 主要計算程式
+function FindYourMoney() {
   // 計算扣除%數多少
   deduction = 1 - (ToDecimal(personalTax.value) + ToDecimal(healthTax.value));
   const CalculateIsTop = quotation.classList.contains("Useing");
@@ -38,17 +63,20 @@ convertBtn.addEventListener("click", () => {
   } else {
     IncomeToTax();
   }
-});
+}
 
 // 稅前金額換算成實拿金額
 function TaxToIncome() {
   //判斷是否超過2萬要扣稅
-  if (quotation.value > 20000) {
-    netIncome.value = PayTaxes(quotation.value);
+  const N_quotation = RealNumber(quotation.value);
+  if (N_quotation > 20000) {
+    netIncome.value = NumberWithCommas(PayTaxes(N_quotation));
     personalTaxValue.innerHTML =
-      Math.round(quotation.value * ToDecimal(personalTax.value)) * -1;
+      "-" +
+      NumberWithCommas(Math.round(N_quotation * ToDecimal(personalTax.value)));
     healthTaxValue.innerHTML =
-      Math.round(quotation.value * ToDecimal(healthTax.value)) * -1;
+      "-" +
+      NumberWithCommas(Math.round(N_quotation * ToDecimal(healthTax.value)));
   } else {
     netIncome.value = quotation.value;
     personalTaxValue.innerHTML = 0;
@@ -64,12 +92,25 @@ function PayTaxes(money) {
 
 // 實拿金額換算成稅前金額
 function IncomeToTax() {
-  AfterTax = netIncome.value / deduction;
-  quotation.value = Math.round(AfterTax);
-  personalTaxValue.innerHTML =
-    Math.round(quotation.value * ToDecimal(personalTax.value)) * -1;
-  healthTaxValue.innerHTML =
-    Math.round(quotation.value * ToDecimal(healthTax.value)) * -1;
+  const N_netIncome = RealNumber(netIncome.value);
+  AfterTax = Math.round(N_netIncome / deduction);
+  if (AfterTax > 20000) {
+    quotation.value = NumberWithCommas(AfterTax);
+    personalTaxValue.innerHTML =
+      "-" +
+      NumberWithCommas(
+        Math.round(RealNumber(quotation.value) * ToDecimal(personalTax.value))
+      );
+    healthTaxValue.innerHTML =
+      "-" +
+      NumberWithCommas(
+        Math.round(RealNumber(quotation.value) * ToDecimal(healthTax.value))
+      );
+  } else {
+    quotation.value = netIncome.value;
+    personalTaxValue.innerHTML = 0;
+    healthTaxValue.innerHTML = 0;
+  }
 }
 
 //判斷是否有在保證明
@@ -88,7 +129,13 @@ ProveRadio.forEach((item) => {
 function ToDecimal(percentage) {
   return percentage / 100;
 }
-// //千位數格式
-// function numberWithCommas(x) {
-//   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// }
+
+//限制輸入正整數 string 轉成 number
+function RealNumber(x) {
+  return Number(x.replace(/\D/g, "").replace(/^0+/, ""));
+}
+
+//轉成千分位
+function NumberWithCommas(x) {
+  return x.toLocaleString("en-US");
+}

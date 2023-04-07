@@ -28,11 +28,11 @@
           <span class="TitleLittleFont">報價或預算金額</span>
         </div>
         <input
-          type="number"
+          type="text"
           id="amount"
-          class="MoneyFont Useing"
           inputmode="numeric"
-          pattern="[0-9]*"
+          class="MoneyFont Useing OnlyNumberAndComma"
+          maxlength="12"
         />
       </div>
       <!-- 代扣項目 -->
@@ -49,12 +49,12 @@
               <!-- %數金額 和 實質數值位置 -->
               <div>
                 <input
-                  type="number"
+                  type="text"
                   id="personalTax"
-                  class="reduceAmount reduceAmountBoder"
+                  class="reduceAmount reduceAmountBoder OnlyNumber"
                   inputmode="numeric"
-                  pattern="[0-9]*"
                   value="10"
+                  maxlength="3"
                 />
                 <span class="reduceAmount">% =</span>
               </div>
@@ -73,7 +73,6 @@
                   id="healthTax"
                   class="reduceAmount reduceAmountBoder"
                   inputmode="numeric"
-                  pattern="[0-9]*"
                   value="2.11"
                 />
                 <span class="reduceAmount">% =</span>
@@ -101,11 +100,11 @@
           <span class="TitleLittleFont">扣完可實拿金額</span>
         </div>
         <input
-          type="number"
+          type="text"
           id="netIncome"
-          class="MoneyFont disableInput"
+          class="MoneyFont disableInput OnlyNumberAndComma"
           inputmode="numeric"
-          pattern="[0-9]*"
+          maxlength="12"
         />
       </div>
       <button id="conversion">計算</button>

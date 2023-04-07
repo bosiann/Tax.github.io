@@ -82,6 +82,9 @@ body main div.DeductPart div.TaxBox div {
   width: 100%;
   display: flex;
 }
+body main div.DeductPart div.TaxBox div input {
+  width: 250px;
+}
 body main div.DeductPart div.ProveBox {
   display: flex;
   justify-content: flex-start;
