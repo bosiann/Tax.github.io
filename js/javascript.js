@@ -74,17 +74,12 @@ function IncomeToTax() {
 
 //判斷是否有在保證明
 const ProveRadio = document.querySelectorAll('input[name="prove"]');
-let ProveCheck = false;
 ProveRadio.forEach((item) => {
   this.addEventListener("click", () => {
-    if (item.checked) {
-      if (item.value == 0) {
-        ProveCheck = false;
-        healthTax.value = 2.11;
-      } else {
-        ProveCheck = true;
-        healthTax.value = 0;
-      }
+    if (item.checked && item.value == 0) {
+      healthTax.value = 2.11;
+    } else {
+      healthTax.value = 0;
     }
   });
 });

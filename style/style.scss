@@ -85,10 +85,10 @@ body {
         div {
           width: 100%;
           display: flex;
+          // background-color: red;
         }
       }
       div.ProveBox {
-        //   background-color: red;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -142,6 +142,7 @@ body {
   box-sizing: border-box;
   padding: 10px 0px;
   padding-left: 20px;
+  font-size: 1.2rem;
   color: black;
   outline: none;
   border: 1px solid #c3c3b9;
@@ -149,7 +150,8 @@ body {
   transition: 0.1s;
 }
 // 禁止點選
-.disableInput {
+.disableInput,
+#healthTax {
   pointer-events: none;
 }
 .Useing {

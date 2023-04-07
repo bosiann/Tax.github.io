@@ -129,6 +129,7 @@ body button:active {
   box-sizing: border-box;
   padding: 10px 0px;
   padding-left: 20px;
+  font-size: 1.2rem;
   color: black;
   outline: none;
   border: 1px solid #c3c3b9;
@@ -136,7 +137,8 @@ body button:active {
   transition: 0.1s;
 }
 
-.disableInput {
+.disableInput,
+#healthTax {
   pointer-events: none;
 }
 
