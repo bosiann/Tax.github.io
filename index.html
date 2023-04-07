@@ -18,7 +18,7 @@
   <body>
     <!-- Header titile -->
     <header>
-      <p>勞報幫你算</p>
+      <h1>勞報幫你算</h1>
     </header>
     <main>
       <!-- 所得金額 稅前費用 -->
@@ -56,9 +56,10 @@
                   pattern="[0-9]*"
                   value="10"
                 />
-                <span class="reduceAmount">%</span>
+                <span class="reduceAmount">% =</span>
               </div>
               <p id="personalTaxValue" class="reduceAmount MoneyView">0</p>
+              <p class="reduceAmount MoneyView">元</p>
             </div>
           </div>
           <!-- 二代健保補充費 -->
@@ -75,9 +76,10 @@
                   pattern="[0-9]*"
                   value="2.11"
                 />
-                <span class="reduceAmount">%</span>
+                <span class="reduceAmount">% =</span>
               </div>
               <p id="healthTaxValue" class="reduceAmount MoneyView">0</p>
+              <p class="reduceAmount MoneyView">元</p>
             </div>
             <!-- 在保證明 -->
           </div>
@@ -101,7 +103,7 @@
         <input
           type="number"
           id="netIncome"
-          class="MoneyFont"
+          class="MoneyFont disableInput"
           inputmode="numeric"
           pattern="[0-9]*"
         />

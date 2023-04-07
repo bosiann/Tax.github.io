@@ -23,6 +23,8 @@ DirectionBtn.addEventListener("click", () => {
   DirectionBtn.classList.toggle("IconRotate");
   quotation.classList.toggle("Useing");
   netIncome.classList.toggle("Useing");
+  quotation.classList.toggle("disableInput");
+  netIncome.classList.toggle("disableInput");
 });
 
 // 按下計算按鈕

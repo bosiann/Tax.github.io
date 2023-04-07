@@ -1,6 +1,7 @@
 * {
   font-family: "Noto Sans TC", sans-serif;
 }
+
 body {
   background-color: #c3c3b9;
   display: flex;
@@ -9,16 +10,15 @@ body {
 
   header {
     width: 60vw;
-    height: 15vh;
+    height: 10vh;
     background-color: #f9faf7;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Noto Sans TC", sans-serif;
-    p {
-      font-size: 3rem;
+    h1 {
       display: flex;
-
+      font-size: 2rem;
       font-weight: 600;
     }
   }
@@ -112,8 +112,8 @@ body {
     background-color: #c6f277;
     border: none;
     color: black;
-    font-size: 2.5rem;
     border-radius: 8px;
+    font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
     font-weight: 500;
@@ -128,12 +128,12 @@ body {
 }
 
 .TitleFont {
-  font-size: 2.2rem;
   color: #87888a;
   padding-right: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 .TitleLittleFont {
-  font-size: 1.5rem;
   color: #87888a;
   font-weight: 300;
 }
@@ -142,32 +142,32 @@ body {
   box-sizing: border-box;
   padding: 10px 0px;
   padding-left: 20px;
-  font-size: 2.5rem;
   color: black;
   outline: none;
   border: 1px solid #c3c3b9;
   border-radius: 8px;
   transition: 0.1s;
 }
+// 禁止點選
+.disableInput {
+  pointer-events: none;
+}
 .Useing {
   border: 2px solid #c6f277;
 }
 // 減量 標題文字格式
 .reduceTitle {
-  font-size: 1.5rem;
   color: #c3c3b9;
   padding-bottom: 10px;
   font-weight: 300;
 }
 .RroveTitle {
-  font-size: 1.5rem;
   color: #c3c3b9;
   font-weight: 300;
 }
 
 // 減量 數值格式
 .reduceAmount {
-  font-size: 1.2rem;
   color: #c3c3b9;
   padding: 5px;
   font-weight: 300;
@@ -194,9 +194,6 @@ body {
   body {
     header {
       width: 90vw;
-      p {
-        font-size: 2.2rem;
-      }
     }
     main {
       width: 90vw;
@@ -209,22 +206,22 @@ body {
     }
   }
   .TitleFont {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
   .TitleLittleFont {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
   .MoneyFont {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .RroveTitle {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
   .reduceTitle {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
   .reduceAmount {
-    font-size: 0.8rem;
+    font-size: 0.3rem;
   }
 }
 // 去除input number旁邊上下鍵
